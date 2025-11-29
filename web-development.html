@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KL LMS | Web Development</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* PAGE-SPECIFIC CARD STYLING (matches your LMS theme) */
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 26px;
+            color: #8B0000;
+        }
+
+        .info-card {
+            width: 100%;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 6px solid #8B0000;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+            color: #222;
+        }
+
+        .info-card p, 
+        .info-card li {
+            color: #555;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .assignment-card {
+            width: 100%;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 6px solid #8B0000;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+            cursor: pointer;
+            margin-bottom: 18px;
+        }
+
+        .assignment-card h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #222;
+        }
+
+        .assignment-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div>
+            <h2>KL LMS</h2>
+            <ul>
+                <li><a href="#" onclick="window.location.href='dashboard.html'">Dashboard</a></li>
+                <li class="active"><a href="#" onclick="window.location.href='courses.html'">Courses</a></li>
+                <li><a href="#" onclick="window.location.href='Assignments.html'">Assignments</a></li>
+                <li><a href="#" onclick="window.location.href='Grades.html'">Grades</a></li>
+                <li><a href="#" onclick="window.location.href='Announcements.html'">Announcements</a></li>
+            </ul>
+        </div>
+        <ul>
+            <li><a href="#" onclick="window.location.href='login.html'">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <div class="topbar">
+            <input type="text" placeholder="Search in course..." />
+            <div class="profile">
+                <span>Hello, Charan</span>
+                <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+            </div>
+        </div>
+
+        <div class="dashboard">
+
+            <h1>Web Development</h1>
+            <p>Course Overview & Learning Material</p>
+
+            <!-- COURSE DETAILS -->
+            <h2 class="section-title"> Course Overview</h2>
+            <div class="info-card">
+                <h3>About the Course</h3>
+                <p>
+                    Learn how to build modern, responsive websites using HTML, CSS, and JavaScript —
+                    from beginner basics to real-world projects.Web development is the process of building and maintaining websites and web applications. It involves front-end development for the visual interface and back-end development for server-side logic and databases. Developers use languages like HTML, CSS, JavaScript, and many frameworks to create functional, responsive sites. Overall, it blends design and programming to bring interactive experiences to life on the internet.
+                </p>
+            </div>
+
+            <!-- TOPICS -->
+            <h2 class="section-title"> Topics Covered</h2>
+            <div class="info-card">
+                <h3>Module Breakdown</h3>
+                <ul>
+                    <li>Introduction to Web & Internet</li>
+                    <li>HTML Basics & Semantic Tags</li>
+                    <li>CSS Styling & Flexbox/Grid</li>
+                    <li>Responsive Web Design</li>
+                    <li>JavaScript Basics</li>
+                    <li>DOM Manipulation</li>
+                    <li>Mini Projects</li>
+                </ul>
+            </div>
+
+            <!-- ASSIGNMENTS -->
+            <h2 class="section-title"> Assignments</h2>
+
+            <div class="assignment-card" onclick="alert('Opening Assignment 1...')">
+                <h3>Assignment 1: Create a Personal Portfolio</h3>
+                <p>Deadline: Feb 10, 2025</p>
+                <p>Status: Pending</p>
+            </div>
+
+            <div class="assignment-card" onclick="alert('Opening Assignment 2...')">
+                <h3>Assignment 2: Build a Responsive Homepage</h3>
+                <p>Deadline: Feb 17, 2025</p>
+                <p>Status: Not Submitted</p>
+            </div>
+
+            <div class="assignment-card" onclick="alert('Opening Assignment 3...')">
+                <h3>Assignment 3: JavaScript DOM Project</h3>
+                <p>Deadline: Feb 24, 2025</p>
+                <p>Status: Pending</p>
+            </div>
+
+            <!-- EXAMS -->
+            <h2 class="section-title"> Exams</h2>
+            <div class="info-card">
+                <h3>Assessment Details</h3>
+                <ul>
+                    <li>Midterm Exam — March 12, 2025</li>
+                    <li>Final Lab Project — April 20, 2025</li>
+                    <li>Final Written Exam — April 28, 2025</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

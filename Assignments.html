@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KL LMS | Assignments</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    /* Layout tweaks for assignments page (keeps your existing dashboard.css untouched) */
+    .main-content { padding: 28px; }
+
+    .dashboard h1 { margin-bottom: 6px; }
+    .dashboard p { margin-top: 0; color: #555; }
+
+    /* Container for the full-row cards */
+    .assignments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    /* Card style — white background with dark red left edge */
+    .assignment-card {
+      width: 100%;
+      background: #ffffff;
+      padding: 22px 26px;
+      border-radius: 12px;
+      border-left: 6px solid #8B0000; /* dark red edge */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Make cards keyboard-focusable & accessible */
+    .assignment-card:focus,
+    .assignment-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+      outline: none;
+    }
+
+    /* Left column (title + meta) and right column (status/deadline/button) */
+    .card-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f1f1f;
+      min-width: 260px; /* aligns titles into a column */
+      margin: 0;
+    }
+
+    .card-desc {
+      color: #555;
+      margin: 4px 0 0 0;
+      min-width: 260px; /* aligns description column */
+      font-size: 14px;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      min-width: 160px;
+    }
+
+    .deadline {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .status {
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .status.pending { color: #8B0000; background: #fff0f0; border: 1px solid rgba(139,0,0,0.06); }
+    .status.submitted { color: #0a7a0a; background: #f0fff0; border: 1px solid rgba(10,122,10,0.06); }
+    .status.graded { color: #004a8b; background: #f0f7ff; border: 1px solid rgba(0,74,139,0.06); }
+
+    /* Small responsive adjustments */
+    @media (max-width: 900px) {
+      .card-left { flex-direction: column; gap: 8px; }
+      .card-meta { align-items: flex-start; text-align: left; min-width: 0; }
+      .card-title, .card-desc { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <h2>KL LMS</h2>
+      <ul>
+        <li><a href="#" onclick="window.location.href='dashboard.html'">Dashboard</a></li>
+        <li><a href="#" onclick="window.location.href='courses.html'">Courses</a></li>
+        <li class="active"><a href="#" onclick="window.location.href='Assignments.html'">Assignments</a></li>
+        <li><a href="#" onclick="window.location.href='Grades.html'">Grades</a></li>
+        <li><a href="#" onclick="window.location.href='Announcements.html'">Announcements</a></li>
+      </ul>
+    </div>
+    <ul>
+      <li><a href="#" onclick="window.location.href='login.html'">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="topbar">
+      <input type="text" placeholder="Search assignments..." />
+      <div class="profile">
+        <span>Hello, Charan</span>
+        <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <h1>Your Assignments</h1>
+      <p>Here are your current assignments (click a card to open the assignment details):</p>
+
+      <div class="assignments-list">
+
+        <!-- Web Development -->
+        <a class="assignment-card" href="web-development.html" onclick="" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Web Development</h3>
+            <div>
+              <p class="card-desc"><strong>HTML & CSS Portfolio</strong><br>Build a personal portfolio with responsive sections and a contact form.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 18, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <a class="assignment-card" href="web-development.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Web Development</h3>
+            <div>
+              <p class="card-desc"><strong>Responsive Layout Project</strong><br>Implement a multi-breakpoint layout using Flexbox & Grid.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 25, 2026</div>
+            <div class="status submitted">Submitted</div>
+          </div>
+        </a>
+
+        <!-- Data Structures -->
+        <a class="assignment-card" href="Data-structures.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Data Structures</h3>
+            <div>
+              <p class="card-desc"><strong>Linked List Implementation</strong><br>Implement singly & doubly linked lists with insertion/deletion operations.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 20, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <a class="assignment-card" href="Data-structures.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Data Structures</h3>
+            <div>
+              <p class="card-desc"><strong>Binary Tree Traversal</strong><br>Write recursive & iterative traversals and compare time/space.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 28, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <!-- Problem Solving through Java -->
+        <a class="assignment-card" href="PSTJ.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Problem Solving Through Java</h3>
+            <div>
+              <p class="card-desc"><strong>Inheritance & Polymorphism Program</strong><br>Design classes that demonstrate polymorphism and method overriding.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 22, 2026</div>
+            <div class="status submitted">Submitted</div>
+          </div>
+        </a>
+
+        <a class="assignment-card" href="PSTJ.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Problem Solving Through Java</h3>
+            <div>
+              <p class="card-desc"><strong>Exception Handling Exercise</strong><br>Handle multiple exception types; create custom exceptions.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Mar 1, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <!-- AI & ML -->
+        <a class="assignment-card" href="AI&ML.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">AI & Machine Learning</h3>
+            <div>
+              <p class="card-desc"><strong>Linear Regression Mini Project</strong><br>Implement linear regression from scratch and visualize results.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 26, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <a class="assignment-card" href="AI&ML.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">AI & Machine Learning</h3>
+            <div>
+              <p class="card-desc"><strong>NumPy & Pandas Task</strong><br>Data cleaning and basic analysis using NumPy/Pandas.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Mar 5, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <!-- Database Management -->
+        <a class="assignment-card" href="Database-management.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Database Management</h3>
+            <div>
+              <p class="card-desc"><strong>SQL Queries Worksheet</strong><br>Write JOINs, GROUP BY and window function examples.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 23, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+        <a class="assignment-card" href="DM.html" role="button" tabindex="0">
+          <div class="card-left">
+            <h3 class="card-title">Discrete Mathematics</h3>
+            <div>
+              <p class="card-desc"><strong>Graph Theory Worksheet</strong><br>Solve shortest path & connectivity problems; proofs welcomed.</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="deadline">Due: Feb 27, 2026</div>
+            <div class="status pending">Pending</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- small script to enable Enter key activation on focused cards -->
+  <script>
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        const active = document.activeElement;
+        if (active && active.classList && active.classList.contains('assignment-card')) {
+          // simulate click
+          active.click();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
